@@ -66,6 +66,23 @@ router.put("/post", uploadMiddleware.single("file"), async (req, res) => {
   return;
 });
 
+router.get("/post/:id", async (req, res) => {
+  const { id } = req.params;
+  const postDoc = await Resource.findById(id);
+  res.json(postDoc);
+});
+
+router.get("/postclient/:id", async (req, res) => {
+  const { id } = req.params;
+  const postDoc = await Resource.findById(id);
+  res.json(postDoc);
+});
+
+router.delete("/post/:id", async (req, res) => {
+  const { id } = req.params;
+  await Resource.findByIdAndDelete(id);
+  res.status(201).json({ message: "delete successfully" });
+});
 
 
 module.exports = router;
