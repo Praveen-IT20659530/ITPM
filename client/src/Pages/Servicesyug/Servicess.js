@@ -21,7 +21,7 @@ function Servicess() {
 
   //calculate kwh
   function Cal() {
-    setKwh(quantity * h * p);
+    setKwh((quantity * h * p)/1000);
   }
 
   async function submit(ev) {
