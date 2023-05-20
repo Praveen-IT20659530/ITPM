@@ -44,6 +44,31 @@ function Servicess() {
     }
   }
 
+  return (
+    <div>
+      <Toaster position="top-center" reverseOrder={false}></Toaster>
+
+      <Nav />
+
+      <div className="flex  justify-center items-center">
+        <div className="flex flex-col w-[500px]  ">
+          <br></br>
+          <br></br>
+          <br></br>
+          <h1 className="text-3xl font-bold text-center mt-[50px] mb-5">
+            Energy Audit
+          </h1>
+          <label className="font-medium ">Appliance</label>
+          <input
+            className="w-full text-center bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
+            type="text"
+            value={appliance}
+            onChange={(e) => {
+              setAppliance(e.target.value);
+            }}
+          />
+
+          <br></br>
   
             Genarate
           </button>
