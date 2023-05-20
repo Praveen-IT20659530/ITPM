@@ -55,6 +55,12 @@ router.get("/audit/:id", async (req, res) => {
   res.json(data);
 });
 
+//find user id by Enargy Audit
+router.get("/audit/get/:uid", async (req, res) => {
+  const { uid } = req.params;
+  const data = await EnergyAudit.find({ uid: uid });
+  res.json(data);
+});
 
 
 
