@@ -37,6 +37,35 @@ router.post("/post", uploadMiddleware.single("file"), async (req, res) => {
     .json({ message: "Resource created successfully", data: postDoc });
 });
 
+router.put("/post", uploadMiddleware.single("file"), async (req, res) => {
+  let newPath = null;
+  if (req.file) {
+    const { originalname, path } = req.file;
+    const parts = originalname.split(".");
+    const ext = parts[parts.length - 1];
+    newPath = path + "." + ext;
+    fs.renameSync(path, newPath);
+  }
+
+  const { id, title, summary, content } = req.body;
+
+  if (!title || !summary || !content) {
+    return res.status(400).json({ message: " fields are empty" });
+  }
+  const postDoc = await Resource.findById(id);
+  await postDoc.updateOne({
+    title,
+    summary,
+    content,
+    cover: newPath ? newPath : postDoc.cover,
+  });
+  res
+    .status(201)
+    .json({ message: "Resource update successfully", data: postDoc });
+
+  return;
+});
+
 
 
 module.exports = router;
