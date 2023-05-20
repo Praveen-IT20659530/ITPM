@@ -11,3 +11,5 @@ to start first install npm :
 1) npm install 
 and run it:
 2) npm start
+
+front-end was successfully run 
