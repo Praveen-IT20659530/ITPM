@@ -21,7 +21,117 @@ import EditServicess from "./Pages/Servicesyug/EditServicess";
 
 const router = createBrowserRouter([
   {
-   
+    path: "/",
+    element: (
+      <AuthorizeUser>
+        <Home />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <Authorized>
+        <Login />
+      </Authorized>
+    ),
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <AuthorizeUser>
+        <Dashboard />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/resource",
+    element: (
+      <AuthorizeUser>
+        <Resource />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/side",
+    element: (
+      <AuthorizeUser>
+        <Sidebar />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/resource/addresource",
+    element: (
+      <AuthorizeUser>
+        <AddResource />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/resource/asinglepost/:id",
+    element: (
+      <AuthorizeUser>
+        <SingleAdminPost />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/resource/edit/:id",
+    element: (
+      <AuthorizeUser>
+        <EditPost />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/cresource",
+    element: (
+      <AuthorizeUser>
+        <Aresource />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "cresource/singlepost/:id",
+    element: (
+      <AuthorizeUser>
+        <SinglePost />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/services",
+    element: (
+      <AuthorizeUser>
+        <Services />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/serviceslist",
+    element: (
+      <AuthorizeUser>
+        <ServicessList />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "/servicesedit/:id",
+    element: (
+      <AuthorizeUser>
+        <EditServicess />
+      </AuthorizeUser>
+    ),
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
+  },
 ]);
 
 export default function App() {
