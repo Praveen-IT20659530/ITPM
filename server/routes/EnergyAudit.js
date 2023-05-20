@@ -27,6 +27,25 @@ router.post("/audit", async (req, res) => {
     .json({ message: "Resource created successfully", data: data });
 });
 
+//Update
+router.put("/audit/update", async (req, res) => {
+  const { appliance, quantity, h, p, kwh, id } = req.body;
+
+  if (!appliance || !quantity || !h || !p || !kwh || !id) {
+    return res.status(400).json({ message: " fields are empty" });
+  }
+  const data = await EnergyAudit.findById(id);
+  await data.updateOne({
+    appliance,
+    quantity,
+    h,
+    p,
+    kwh,
+  });
+  res.status(201).json({ message: "Resource update successfully", data: data });
+
+  return;
+});
 
 
 
