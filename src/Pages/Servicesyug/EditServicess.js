@@ -101,44 +101,44 @@ function EditServicess() {
           <br></br>
           <label className="font-medium">P/W</label>
 
-<input
-  className="w-full text-center bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
-  type="number"
-  value={p}
-  onChange={(e) => {
-    setP(e.target.value);
-  }}
-/>
-<br></br>
+          <input
+            className="w-full text-center bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
+            type="number"
+            value={p}
+            onChange={(e) => {
+              setP(e.target.value);
+            }}
+          />
+          <br></br>
 
-<br></br>
+          <br></br>
 
-<button
-  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-  onClick={Cal}
->
-  Genarate
-</button>
-<br></br>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={Cal}
+          >
+            Genarate
+          </button>
+          <br></br>
 
-<label className="font-medium text-center">Kwh/Day</label>
+          <label className="font-medium text-center">Kwh/Day</label>
 
-<input
-  className="ml-[202px] text-center w-[100px] bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
-  type="text"
-  value={kwh}
-  onChange={(e) => {
-    setKwh(e.target.value);
-  }}
-  readOnly
-/>
+          <input
+            className="ml-[202px] text-center w-[100px] bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
+            type="text"
+            value={kwh}
+            onChange={(e) => {
+              setKwh(e.target.value);
+            }}
+            readOnly
+          />
 
-<br></br>
+          <br></br>
 
-<button
-  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-  onClick={update}
->
+          <button
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            onClick={update}
+          >
             Update
           </button>
         </div>
