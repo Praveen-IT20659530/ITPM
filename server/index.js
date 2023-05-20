@@ -17,7 +17,7 @@ mongoose
   .connect(process.env.MONGOURI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    writeConcern: { w: "majority", j: true, wtimeout: 1000 },
+    writeConcern: { w: "majority", j: true, wtimeout: 1000 }
   })
   .then(() => console.log("Database Successfully Connected"))
   .catch((error) => console.log(error));
