@@ -48,5 +48,14 @@ router.put("/audit/update", async (req, res) => {
 });
 
 
+//findby id by Enargy Audit
+router.get("/audit/:id", async (req, res) => {
+  const { id } = req.params;
+  const data = await EnergyAudit.findById(id);
+  res.json(data);
+});
+
+
+
 
 module.exports = router;
