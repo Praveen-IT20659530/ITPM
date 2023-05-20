@@ -19,6 +19,31 @@ function Servicess() {
 
   const navigate = useNavigate();
 
+  //calculate kwh
+  function Cal() {
+    setKwh(quantity * h * p);
+  }
+
+  async function submit(ev) {
+    ev.preventDefault();
+
+    const res = await fetch("http://localhost:5000/audit/audit", {
+      method: "POST",
+      body: JSON.stringify({ appliance, quantity, h, p, kwh, uid }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (res.status === 400) {
+      toast.error("fields are empty");
+    } else if (res.status === 201) {
+      toast.success("Insert Successfully");
+      setTimeout(() => {
+        navigate("/serviceslist");
+      }, 1000);
+    } else {
+      toast.error("Server error");
+    }
+  }
+
   
             Genarate
           </button>
