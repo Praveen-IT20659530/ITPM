@@ -9,11 +9,7 @@ Features:
 The web app will provide a home energy audit tool.
 Through this, it is possible to calculate how much electricity is being used by the electrical appliances currently used at home or in the office.
 it Suggests ways to reduce energy consumption based on audit results. For example, switching to LED light bulbs or replacing old appliances with energy-efficient ones may be recommended.
-2. Project Planner:
-This will show you how much the solar panel will cost and how much electricity it will give you depending on the size you choose.
-3. Contractor Finder:
-The app will provide a tool to find contractors who specialize in solar panels, ensuring that users can find the right professionals for their projects.
-4. Resource Center:
-The app includes a resource center with tips for reducing electricity use, tips for solar panels, and resources, including best practices, case studies, and success stories.
-Target Users:
-EcoMate targets environmentally conscious homeowners who want to lower their energy bills and carbon footprint. The web app offers tools for calculating energy consumption, suggesting ways to reduce it, and planning solar panel projects. It also provides a resource center and contractor finder to help users take action.
+
+in this i create Energy Audit function front-end 
+
+and also the main pages frontend 
