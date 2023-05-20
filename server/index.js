@@ -24,4 +24,19 @@ mongoose
 
 const port = process.env.PORT || 5000;
 
+
+
+
+
+
+
+
+app.use("/user", require("./routes/User"));
+app.use("/resource", require("./routes/Resource"));
+app.use("/audit", require("./routes/EnergyAudit"));
+
+app.listen(port, () => {
+  console.log(`Server Running on Port - ${port}`);
+});
+
 module.exports = app;
