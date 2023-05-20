@@ -62,6 +62,20 @@ router.get("/audit/get/:uid", async (req, res) => {
   res.json(data);
 });
 
+//find all Enargy Audit
+router.get("/audit", async (req, res) => {
+  const data = await EnergyAudit.find();
+  res.json(data);
+});
+
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  await EnergyAudit.findByIdAndDelete(id);
+  res.status(201).json({ message: "delete successfully" });
+});
+
+
 
 
 module.exports = router;
