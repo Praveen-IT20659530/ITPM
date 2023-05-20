@@ -84,5 +84,4 @@ router.delete("/post/:id", async (req, res) => {
   res.status(201).json({ message: "delete successfully" });
 });
 
-
 module.exports = router;

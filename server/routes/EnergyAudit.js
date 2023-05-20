@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const EnergyAudit = require("../model/EnergyAudit");
 
-
 //find all Enargy Audit
 router.get("/", async (req, res) => {
   res.json(await EnergyAudit.find().sort({ createdAt: -1 }).limit(20));
@@ -47,7 +46,6 @@ router.put("/audit/update", async (req, res) => {
   return;
 });
 
-
 //findby id by Enargy Audit
 router.get("/audit/:id", async (req, res) => {
   const { id } = req.params;
@@ -74,8 +72,5 @@ router.delete("/:id", async (req, res) => {
   await EnergyAudit.findByIdAndDelete(id);
   res.status(201).json({ message: "delete successfully" });
 });
-
-
-
 
 module.exports = router;
