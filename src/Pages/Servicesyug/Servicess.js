@@ -69,6 +69,32 @@ function Servicess() {
           />
 
           <br></br>
+          
+
+          <label className="font-medium">Quantity</label>
+
+          <input
+            className="w-full text-center bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
+            type="number"
+            value={quantity}
+            onChange={(e) => {
+              setQuantity(e.target.value);
+            }}
+          />
+          <br></br>
+
+          <label className="font-medium">H/Day</label>
+
+          <input
+            className="w-full text-center bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 "
+            type="number"
+            value={h}
+            onChange={(e) => {
+              setH(e.target.value);
+            }}
+          />
+          <br></br>
+          
   
             Genarate
           </button>
