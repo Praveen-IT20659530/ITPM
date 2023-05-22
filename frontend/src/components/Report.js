@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 
 
-export default class Report extends Component {
+export default class report extends Component {
 
 
     constructor(props) {
@@ -22,7 +22,7 @@ export default class Report extends Component {
     }
     retriveElectricities() {
 
-        axios.get("http://localhost:8060/electricity/all").then(res => {
+        axios.get("http://localhost:8070/electricity/all").then(res => {
 
             if (res.data.success) {
                 this.setState({
@@ -68,7 +68,7 @@ export default class Report extends Component {
        <thead>
        <tr>
          
-       <th scope="col">ID</th>
+       
        <th scope="col">Pannel Size</th>
        <th scope="col">Company</th>
        <th scope="col">Availability Of Intensity</th>
@@ -76,7 +76,7 @@ export default class Report extends Component {
        <th scope="col">Units</th>
        <th scope="col">Irradiance</th>
        <th scope="col">Conversion Efficiency</th>
-       <th scope="col">Acction</th>
+       
             
             
             </tr>
@@ -86,7 +86,7 @@ export default class Report extends Component {
         {this.state.electricities.map((electricities,index)=>(
  
          <tr>
-            <th scope="row">{index+1}</th>
+            
             <td>{electricities.pannelSize}</td>
             <td>{electricities.company}</td>
             <td>{electricities.intensity}</td>
