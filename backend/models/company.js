@@ -1,28 +1,33 @@
 const mongoose = require('mongoose');
+//const router = require('../routes/packages');
 
-const Schema = mongoose.Schema;
 
-const companySchema = new Schema({
 
-    Name : {
-        type : String,
-        required: true
-    },
-    Contact_Number: {
-        type : Number,
-        required: true
-    },
-    Location : {
-        type : String,
-        required: true
-    },
-    Email : {
-        type : String,
-        required: true
-    }
-   
+//Create Database Scheams
+const CompanyScheama = new mongoose.Schema({
+    Name :{
+    type : String,
+    required : true
+},
+
+Contact_Number :{
+    type : Number,
+    required : true   
+},
+
+Location:{
+    type:String,
+    required : true
+},
+
+Email:{
+ type:String,
+ required:true
+}
+
 })
 
-const Company = mongoose.model("Company",companySchema);
+//Create a module for connect with scheama
+const Company=mongoose.model("Company",CompanyScheama);
 
-module.exports = Company;
+module.exports=Company;
