@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.back-img{
+  background: url('./images/desktop.jpg');
+  height: 115vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

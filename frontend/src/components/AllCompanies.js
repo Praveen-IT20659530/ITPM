@@ -1,174 +1,161 @@
-import React,{Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import "./../style.css";
 
 
-export default class AllCom extends Component{
+export default class AllCompanies extends Component {
 
 
-   constructor(props){
+   constructor(props) {
 
-       super(props);
+      super(props);
 
-       this.state={
+      this.state = {
 
-        companies:[]
-       };
+         companies: []
+      };
 
    }
-  componentDidMount(){
 
-   this.retriveCompanies();
-  }
-  retriveCompanies(){
+    // connect to the db
 
-   axios.get("http://localhost:8070/company/allCom").then(res=>{
+   componentDidMount() {
 
-      if(res.data.success){
-          this.setState({
+      this.retriveCompanies();
+   }
+   retriveCompanies() {
 
-            companies:res.data.existingCompanies
+      axios.get("http://localhost:8070/company/all").then(res => {
 
-          });
+         if (res.data.success) {
+            this.setState({
+               companies: res.data.existingCompanies
+            });
 
-          console.log(this.state.companies)
-
-      }
-
-
-   })
+            console.log(this.state.companies)
+         }
+      })
 
 
 
-  }
+   }
+
+
+//Filter /Search Mechod
+filterContent(companies,searchTerm){
+   const results=companies.filter((Company)=>Company.Location.toUpperCase().includes(searchTerm));
+   this.setState({companies:results});
+}
+ handleTextSearch=(e)=>{
+
+    const searchTerm=e.currentTarget.value;
+    axios.get("http://localhost:8070/company/all").then(res=>{
+
+     if(res.data.success){
+        this.filterContent(res.data.existingCompanies,searchTerm)
+     }
+ });
+
+}; 
  
 
+onDelete(id) {
 
-  
-     
- /* onDelete(id){
+      fetch(`http://localhost:8070/company/delete/${id}`, {
 
-     fetch(`http://localhost:8070/package/delete/${id}`,{
-
-           method:`DELETE`
+         method: `DELETE`
 
 
+      }).then((result) => {
 
+         result.json().then((resp) => {
 
-     }).then((result)=>{
-
-         result.json().then((resp)=>{
-
-           console.warn(resp)
-           alert("Deleted Succsessfull")
-           this.retrivePackages()
+            console.warn(resp)
+            alert("Deleted Succsessfull")
+            this.retriveCompanies()
 
          })
 
 
-     })
-    
+      })
+
+   }
+
+   render() {
+
+      return (
+         <div className="container" class="back-img2">
+         <div class ="card-com">
+         <center>
+         <h1><u><strong>Company Details</strong></u></h1>
+         </center>
+
+               
+         <div className="row">
+            <div className="col-lg-9 mt-2 mb-2">
+            <h3 className="Ball" class="p-3 mb-2 bg-dark text-white"><strong>Search Company Location</strong></h3>
+         </div>
+
+                  <div className="col-lg-3 mt-2 mb-2" class="text-center" style={{ width: "800px" }}>
+
+                     <input
+                        className="form-control"
+                        type="search"
+                        placeholder="Search"
+                        name="searchTerm"
+                        onChange={this.handleTextSearch}
+
+                     ></input>
+                  </div>
+            </div>
+            
+             
+            <div>
+            <table className="table table-hover" style={{marginTop:'40px'}}>
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Index</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                     {this.state.companies.map((company, index) => (
+                        <tr>
+                           <th scope="row">{index + 1}</th>
+                           <td>{company.Name}</td>
+                           <td>{company.Contact_Number}</td>
+                           <td>{company.Location}</td>
+                           <td>{company.Email}</td>
+                           <td>
+                             <a className="btn btn-success" href={`/upd/${company._id}`}><i className="fa-solid fa-wrench"></i>Update</a>&nbsp;&nbsp;
+                              <a className="btn btn-danger" onClick={() => this.onDelete(company._id)}> <i className="fa-solid fa-trash-can "></i>&nbsp;&nbsp;Delete&nbsp;&nbsp;&nbsp;</a>
+                           </td>
 
 
-  }
+
+                        </tr>
 
 
-   //Filter /Search Mechod
- filterContent(packages,searchTerm){
+                     ))}
 
-  const results=packages.filter((packages)=>packages.packId.toLowerCase().includes(searchTerm));
-  this.setState({packages:results});
+
+                  </tbody>
+
+               </table>
+
+               <a href="/manager" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Back</strong></a>&nbsp;&nbsp;&nbsp;
+               <a href="/report" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Get Report</strong></a>&nbsp;&nbsp;&nbsp;
+            </div>
+
+        </div>
+      </div>
+      )
+   }
 
 }
-
-
-handleTextSearch=(e)=>{
-
-   const searchTerm=e.currentTarget.value;
-   axios.get("http://localhost:8070/package/all").then(res=>{
-
-    if(res.data.success){
-       this.filterContent(res.data.existingPackages,searchTerm)
-    }
-});
-
-}; 
-
-*/
-
-
-
- render(){
-
-    return(
-
-      <div className="container">
-     
-   
-
-      <table class="table table-white table-white">
-      <thead>
-      <tr class="tableHeaders">
-           <th scope="col">Name</th>
-           <th scope="col">Contact Number</th>
-           <th scope="col">Location</th>
-           <th scope="col">Email</th>
-
-  
-  
-      </tr>
-     </thead>
-     <tbody>
-
-       {this.state.companies.map((company,index)=>(
-
-        <tr class="rows4">
-          <th scope="row">{index+1}</th>
-          <td>{company.Name}</td>
-          <td>{company.Contact_Number}</td>
-          <td>{company.Location}</td>
-          <td>{company.Email}</td>
-
-
-
-          <td>
-
-          {/*<div><a class="btnUpdate" href = {`/update/${packages._id}`}  style={{width:"200px"}}>Update</a> </div> */}
-                   
-         
-               {/*<a class="btnDelete"  onClick={()=>this.onDelete(packages._id)} style={{width:"200px"}}> Delete </a>&nbsp;&nbsp;&nbsp;*/}
-        </td>
-        </tr>
-
-       ))}
-
-     </tbody>
-
-
-
-     </table>
-    
-     <td></td>
-     
-    
- 
- 
-  <div class="card-body" style={{ position:"absolute", right:5,top:900}}>
-  <h5 class="text-dark"><center><strong>Travelo</strong></center></h5>
-  <p class="text-white"><center>copyright @2020 Travelo All rights are reserved</center></p>
-  </div>
-  <div class="card-footer text-muted">
-    
-  </div>
-</div>
-   
-
-  
-      
-
-    
-
-    ) 
- }
-
- }
