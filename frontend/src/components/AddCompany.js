@@ -90,9 +90,9 @@ return(
    </div><br></br>
    
    <div class="d-grid gap-2 col-6 mx-auto">
-   <button type="submit" class="btn btn-warning"><strong> Submit </strong></button>
+   <button type="submit" class="btn btn-warning"><strong>Submit</strong></button>
    <div>
-   <a href="/manager" class="btn btn-warning" style={{width:"300px"}}><strong>Manage Company Details</strong></a>
+   <a href="/manager" class="btn btn-warning" style={{width:"300px"}}><strong> Manage Company Details </strong></a>
            </div>
    </div>
    
