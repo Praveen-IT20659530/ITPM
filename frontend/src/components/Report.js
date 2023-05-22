@@ -81,10 +81,7 @@ repotGen=()=>{
                            <td>{company.Location}</td>
                            <td>{company.Email}</td>
                           
-
-
-
-                        </tr>
+                           </tr>
 
 
                      ))}
@@ -95,7 +92,7 @@ repotGen=()=>{
                </table>
 
                <a href="/add" class="btn btn-dark" style={{ width: "200px" }}><strong>&nbsp;&nbsp;Back</strong></a>&nbsp;&nbsp;&nbsp;
-               <button onClick={this.repotGen}>Get Report</button>
+               <button onClick={this.repotGen}> Get Report</button>
             </div>
 
         </div>
