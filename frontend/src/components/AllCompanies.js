@@ -133,7 +133,7 @@ onDelete(id) {
                            <td>{company.Location}</td>
                            <td>{company.Email}</td>
                            <td>
-                             <a className="btn btn-success" href={`/upd/${company._id}`}><i className="fa-solid fa-wrench"></i>Update</a>&nbsp;&nbsp;
+                             <a className="btn btn-success" href={`/upd/${company._id}`}><i className="fa-solid fa-wrench"></i>Update details</a>&nbsp;&nbsp;
                               <a className="btn btn-danger" onClick={() => this.onDelete(company._id)}> <i className="fa-solid fa-trash-can "></i>&nbsp;&nbsp;Delete&nbsp;&nbsp;&nbsp;</a>
                            </td>
 
