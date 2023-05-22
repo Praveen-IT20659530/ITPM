@@ -125,30 +125,26 @@ onDelete(id) {
             </thead>
             <tbody>
 
-                     {this.state.companies.map((company, index) => (
-                        <tr>
-                           <th scope="row">{index + 1}</th>
-                           <td>{company.Name}</td>
-                           <td>{company.Contact_Number}</td>
-                           <td>{company.Location}</td>
-                           <td>{company.Email}</td>
-                           <td>
-                             <a className="btn btn-success" href={`/upd/${company._id}`}><i className="fa-solid fa-wrench"></i>Update details</a>&nbsp;&nbsp;
-                              <a className="btn btn-danger" onClick={() => this.onDelete(company._id)}> <i className="fa-solid fa-trash-can "></i>&nbsp;&nbsp;Delete&nbsp;&nbsp;&nbsp;</a>
-                           </td>
+            {this.state.companies.map((company, index) => (
+               <tr>
+                  <th scope="row">{index + 1}</th>
+                  <td>{company.Name}</td>
+                  <td>{company.Contact_Number}</td>
+                  <td>{company.Location}</td>
+                  <td>{company.Email}</td>
+                  <td>
+                     <a className="btn btn-success" href={`/upd/${company._id}`}><i className="fa-solid fa-wrench"></i>Update details</a>&nbsp;&nbsp;
+                     <a className="btn btn-danger" onClick={() => this.onDelete(company._id)}> <i className="fa-solid fa-trash-can "></i>&nbsp;&nbsp;Delete&nbsp;&nbsp;&nbsp;</a>
+                  </td>
+
+               </tr>
+
+            ))}
 
 
+            </tbody>
 
-                        </tr>
-
-
-                     ))}
-
-
-                  </tbody>
-
-               </table>
-
+            </table>
                <a href="/manager" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Back</strong></a>&nbsp;&nbsp;&nbsp;
                <a href="/report" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Get Report</strong></a>&nbsp;&nbsp;&nbsp;
             </div>
