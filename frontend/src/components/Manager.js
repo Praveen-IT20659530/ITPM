@@ -29,7 +29,7 @@ export default class manager extends Component {
         <div class="card text-dark bg-light mb-3" style={{ width: "300px", position: 'absolute', right: 300, top: 350, }}>
           <div class="card-header"> <b>Hello..Mr.Gamage</b></div>
           <div class="card-body">
-            <h5 class="card-title">Welcom to Registration Manager's Page</h5>
+            <h5 class="card-title"> Welcom to Registration Manager's Page </h5>
             <p class="card-text"><i>Your Company user name -</i>  STGSS</p>
             <p class="card-text"><i>Your Registration Nubmer -</i> REG998</p>
             <p class="card-text"><i>Your Login Password -</i> Gama@Man34</p>
@@ -40,16 +40,16 @@ export default class manager extends Component {
 
         <div class="p-3 mb-2 bg-dark text-white card" style={{ width: '24rem' }}>
           <div class="card-body">
-            <h5 class="text-warning card-title"><strong>Register New Company</strong></h5>
-            <p class="card-text" class="text-info">Enter Company details</p>
+            <h5 class="text-warning card-title"><strong> Register New Company </strong></h5>
+            <p class="card-text" class="text-info"> Enter Company details </p>
             <a href="/add" class="btn btn-danger"><i className="fa-solid fa-angles-right"></i>&nbsp;<strong>Lets Go..</strong></a>
           </div>
         </div>
 
         <div class="card" class="p-3 mb-2 bg-dark text-white" style={{ width: '24rem' }}>
           <div class="card-body">
-            <h5 class="card-title" class="text-warning"><strong>Manage Registred Company Details</strong></h5>
-            <p class="card-text" class="text-info">View,Delete,Update Company Details</p>
+            <h5 class="card-title" class="text-warning"><strong> Manage Registred Company Details </strong></h5>
+            <p class="card-text" class="text-info"> View,Delete,Update Company Details </p>
             <a href="/all" class="btn btn-danger"><i className="fa-solid fa-angles-right" ></i>&nbsp;<strong>Lets Go..</strong></a>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default class manager extends Component {
         <div class="card" class="p-3 mb-2 bg-dark text-white" style={{ width: '24rem' }}>
           <div class="card-body">
             <h5 class="card-title" class="text-warning"><strong>Get reports</strong></h5>
-            <p class="card-text" class="text-info">Print registred Company details report</p>
+            <p class="card-text" class="text-info"> Print registred Company details report </p>
             <a href="/report" class="btn btn-danger"><i className="fa-solid fa-angles-right"></i>&nbsp;<strong>Lets Go..</strong></a>
           </div>
         </div>
