@@ -20,7 +20,7 @@ export default class AllData extends Component{
   }
   retriveElectricities(){
 //retreive data to the admin
-   axios.get("http://localhost:8060/electricity/all").then(res=>{
+   axios.get("http://localhost:8070/electricity/all").then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -38,7 +38,7 @@ export default class AllData extends Component{
 //delete data in the database
 onDelete(id){
 
-     fetch(`http://localhost:8060/electricity/delete/${id}`,{
+     fetch(`http://localhost:8070/electricity/delete/${id}`,{
 
            method:`DELETE`
 
@@ -58,7 +58,6 @@ onDelete(id){
 
       <div className="container">
        
-
            <center>
            <center><strong><u><h2 class="text-light bg-dark" > Manage Details</h2></u> </strong>
            </center>
@@ -67,7 +66,7 @@ onDelete(id){
       <thead>
       <tr>
         
-      <th scope="col">ID</th>
+     
       <th scope="col">Pannel Size</th>
       <th scope="col">Company</th>
       <th scope="col">Availability Of Intensity</th>
@@ -75,6 +74,7 @@ onDelete(id){
       <th scope="col">Units</th>
       <th scope="col">Irradiance</th>
       <th scope="col">Conversion Efficiency</th>
+      <th scope="col">Monthly Generated Electricity</th>
       <th scope="col">Acction</th>
            
            
@@ -85,7 +85,7 @@ onDelete(id){
        {this.state.electricities.map((electricities,index)=>(
 
         <tr>
-           <th scope="row">{index+1}</th>
+           
            <td>{electricities.pannelSize}</td>
            <td>{electricities.company}</td>
            <td>{electricities.intensity}</td>
@@ -93,14 +93,17 @@ onDelete(id){
            <td>{electricities.units}</td>
            <td>{electricities.irradiance}</td>
            <td>{electricities.conversionEfficiency}</td>
+           <td>{electricities.monthlyGeneratedElectricity}</td>
+          
 
           <td>
-             <button type="button" class="btn btn-dark" onClick={()=>this.onDelete(electricities._id)}>Delete</button>
+             <button type="button" class="btn btn-danger" onClick={()=>this.onDelete(electricities._id)}>
+             <i className="fas fa-trash"></i>Delete</button>
              </td>
 
              <td>
-                        <a className="btn btn-dark" href={`/update/${electricities._id}`}>
-                          <i className="fas fa-edit"></i>&nbsp;Edit
+                        <a className="btn btn-success" href={`/edit/${electricities._id}`}>
+                          <i className="fas fa-edit"></i>Edit
                         </a></td>
 
            </tr>
@@ -113,8 +116,9 @@ onDelete(id){
         
         
          </table>
-         <a href ="add" type="submit" class="btn btn-danger"  style={{ marginTop: '60px', color:'white', width:'245px', height:'38px', margin:'10px'}} ><b>BACK</b></a>
-         <a href ="report" type="submit" class="btn btn-danger"  style={{ marginTop: '60px', color:'white', width:'245px', height:'38px', margin:'10px'}} ><b>GET REPORT</b></a>
+         <a href ="/add" type="submit" class="btn btn-danger"  style={{ marginTop: '60px', color:'white', width:'245px', height:'38px', margin:'10px'}} ><i class="fas fa-arrow-left">&nbsp;&nbsp;&nbsp;&nbsp;</i><b>BACK</b></a>
+         <a href ="/report" type="submit" class="btn btn-danger"  style={{ marginTop: '60px', color:'white', width:'245px', height:'38px', margin:'10px'}} ><i class="fas fa-print"></i><b>&nbsp;&nbsp;&nbsp;&nbsp;GET REPORT</b></a>
+         <a href ="/search" type="submit" class="btn btn-danger"  style={{ marginTop: '60px', color:'white', width:'245px', height:'38px', margin:'10px'}} ><i class="fas fa-search"></i><b>&nbsp;&nbsp;&nbsp;&nbsp;SEARCH</b></a>
       </div>
       ) 
  }
