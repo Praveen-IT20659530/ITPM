@@ -1,0 +1,23 @@
+.back-img{
+    background: url('../images/CarBack.jpeg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .back-img2{
+    background: url('../images/Audi.jpeg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .back-img3{
+    background: url('../images/Audi2.jpeg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
