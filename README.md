@@ -17,3 +17,10 @@ The app will provide a tool to find contractors who specialize in solar panels, 
 The app includes a resource center with tips for reducing electricity use, tips for solar panels, and resources, including best practices, case studies, and success stories.
 Target Users:
 EcoMate targets environmentally conscious homeowners who want to lower their energy bills and carbon footprint. The web app offers tools for calculating energy consumption, suggesting ways to reduce it, and planning solar panel projects. It also provides a resource center and contractor finder to help users take action.
+
+
+to run this :
+crate a .env file in server side 
+
+
+
