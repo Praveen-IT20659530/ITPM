@@ -1,5 +1,12 @@
 # ITPM
 
+Team Name - Build Better
+
+Group Leader - IT20659530 - Liyanage N.L.D.N.P (praveen-IT20659530)
+Member 2 - IT20643768 - Jayakody J.A.R.R (Randi -IT20643768)
+Member 3 - IT20641856 - Ranaweera S.D (Shashini- IT20641856)
+Member 4 - IT20152314 - Kasthuri A.V.V (Vimukthi - IT20152314)
+
 EcoMate
 EcoMate is a web application that helps homeowners plan to improve energy efficiency and reduce environmental impact.
 The application gives the user an approximate estimate of the area where the user's house is located and the user's electricity consumption, as well as how much electricity is being used by the current electrical devices, what can be done to reduce the electricity consumption, and how much money can be saved by using solar panels. It will encourage the user to use the panels and provide personalized recommendations for solar panels.
