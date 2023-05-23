@@ -145,7 +145,7 @@ onDelete(id) {
             </tbody>
 
             </table>
-               <a href="/manager" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Back</strong></a>&nbsp;&nbsp;&nbsp;
+               <a href="/manager" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;  Back </strong></a>&nbsp;&nbsp;&nbsp;
                <a href="/report" class="btn btn-dark" style={{ width: "200px" }}><strong><i className="fa-solid fa-user-clock"></i>&nbsp;&nbsp;Get Report</strong></a>&nbsp;&nbsp;&nbsp;
             </div>
 
