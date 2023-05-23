@@ -22,5 +22,5 @@ EcoMate targets environmentally conscious homeowners who want to lower their ene
 to run this :
 crate a .env file in server side 
 
-MONGOURI = <mongo uri>/?retryWrites=true&w=majority
-JWT_SECRET = jsonwebtokenekesecretkeyeka
+
+
